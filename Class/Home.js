@@ -2,15 +2,22 @@ import React,{Component} from 'react';
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    Image
 } from 'react-native';
 
-
+import PlayList from './PlayList/PlayList'
 export default class Home extends Component{
+    static navigationOptions = {
+        headerTitle:'首页',
+       headerBackTitle:null
+
+    }
+
    render(){
        return(
            <View style={styles.container}>
-               <Text style={styles.proText}>我是首页</Text>
+              <PlayList navigation={this.props.navigation} />
            </View>
        )
 

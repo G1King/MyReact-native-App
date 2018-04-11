@@ -7,6 +7,9 @@ import {
 
 
 export default class Find extends  Component{
+    static navigationOptions = {
+        headerTitle:'发现'
+    }
     render(){
         return(
             <View style={styles.container}>

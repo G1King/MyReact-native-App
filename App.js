@@ -9,10 +9,13 @@ import {
     StackNavigator,
     TabNavigator
 } from 'react-navigation';
+import {Image} from 'react-native';
 import Icon from  'react-native-vector-icons/FontAwesome';
 import Home from './Class/Home';
 import Find from './Class/Find';
 import Mine from './Class/Mine';
+import Detail from './Class/Detail';
+import TabBarItem from './TabBarItem';
 const  TabBar = TabNavigator({
      Home:{
          screen:Home,
@@ -36,12 +39,19 @@ const  TabBar = TabNavigator({
         screen:Mine,
         navigationOptions:{
             tabBarLabel: '我的',
-            tabBarIcon:({tintColor}) =>(
-                <Icon name = 'user' size={20} color={tintColor}/>
+            tabBarIcon:({focused,tintColor}) =>(
+              <TabBarItem
+                  focused={focused}
+                  tintColor={tintColor}
+                  normalImage={{uri:'my_unselect'}}
+                  selectImage={{uri:'my_select'}}
+              />
+
             )
         }
     },
 },
+    //<Icon name = 'user' size={20} color={tintColor}/><Image source={{uri:'my_unselect'}} style={{tintColor:tintColor,width:20,height:20}} />
     {
         tabBarPosition:'bottom',
         tabBarOptions:{
@@ -60,7 +70,11 @@ const  TabBar = TabNavigator({
 
     });
 const Navigation = StackNavigator({
-    home:{screen:TabBar}
+    rootVC:{screen:TabBar
+    },
+   detail:{
+        screen:Detail
+   }
 },{
     headerMode:'screen'
 });

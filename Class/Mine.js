@@ -7,6 +7,13 @@ import {
 
 
 export default class Mine extends  Component{
+    static navigationOptions = {
+        // header: null,
+        headerTitle:'我的',
+
+
+    };
+
     render(){
         return(
             <View style={styles.container}>
