@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {View,Text,TouchableOpacity,StyleSheet,Image} from 'react-native';
-
+import Star from './Star';
 export default class Rank extends Component{
     //给属性给予默认值
     static defaultProps = {
@@ -34,7 +34,11 @@ export default class Rank extends Component{
                         </View>
                         <View style={{marginLeft:10}}>
                             <Text style={{fontWeight:'800',fontSize:18}}>{title}</Text>
-                            <Text style={{color:'#9b9b9b',fontSize:11}}>{average}</Text>
+                            <View style={{marginTop:10,marginBottom:10,flexDirection:'row'}}>
+                                <Star value={star} />
+                                <Text style={{color:'#9b9b9b',fontSize:11}}>{average}</Text>
+                            </View>
+
                             <Text style={styles.gray}>导演:{directors}</Text>
                             <Text style={styles.gray}>主演:{casts.map((v,i,array)=>{
                                 return v.name + (i!=2 ? '/':'')

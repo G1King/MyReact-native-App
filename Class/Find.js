@@ -4,13 +4,15 @@ import {
     Text,
     StyleSheet,
     FlatList,
-    Image
+    Image,
+    ActivityIndicator
 } from 'react-native';
 
 import ScrollableTabView, {DefaultTabBar} from 'react-native-scrollable-tab-view';
 import API from "../Config/APIConfig";
 import Rank from './Rank';
 import Window from '../Config/Maco';
+
 export default class Find extends Component {
     static navigationOptions = {
         headerTitle: '发现'
@@ -33,7 +35,7 @@ export default class Find extends Component {
         const {navigate} = this.props.navigation;
 
         return (
-            <View style={styles.container}>
+        this.state.ready ? <ActivityIndicator size='large' style={{marginTop: 200}}/> :  <View style={styles.container}>
                 <ScrollableTabView renderTabBar={() => <DefaultTabBar/>}
                                    tabBarUnderlineStyle={{
                                        backgroundColor: 'red',
@@ -129,7 +131,7 @@ export default class Find extends Component {
                 break;
 
         }
-        if(this.state[type].length != 0)return;
+
         this.setState({
             ready:true,
         });

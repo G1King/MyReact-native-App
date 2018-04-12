@@ -12,7 +12,7 @@ import {
 import ScrollableTabView, {DefaultTabBar} from 'react-native-scrollable-tab-view';
 import API from "../Config/APIConfig";
 import Widnow from '../Config/Maco';
-
+import Star from './Star';
 export default class Detail extends Component {
     constructor(props) {
         super(props);
@@ -104,7 +104,7 @@ export default class Detail extends Component {
                                 <View style={styles.infoSquare}>
                                     <Text style={styles.otherMovieInfo}>豆瓣评分</Text>
                                     <Text style={{fontSize: 20, fontWeight: '600'}}>{rating.average}</Text>
-                                    //查个星星
+                                    <Star value={rating.stars} width={11} height={11} />
                                     <Text style={styles.otherMovieInfo}>{ratings_count}人</Text>
                                 </View>
                             </View>

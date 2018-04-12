@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import API from '../../Config/APIConfig';
 import Detail from '../../Class/Detail';
-
+import Star from '../Star';
 export default class PlayList extends Component {
     constructor(props) {
         super(props);
@@ -85,7 +85,7 @@ export default class PlayList extends Component {
 
                                     </Text>
                                     <View style={{marginTop: 3, marginBottom: 3}}>
-                                        <Image source={require('../../resources/star-full.png')}/>
+                                        <Star value={item.value.rating.stars} width={10} height={10}/>
                                     </View>
                                     <Text style={styles.directors}>
                                         导演:{item.value.directors[0].name}
