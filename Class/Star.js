@@ -10,6 +10,7 @@ export  default class Star extends Component{
   static propTypes = {
       value:PropTypes.string.isRequired,
     }
+
   _startRender = (props) => {
       const {width,height,value} = props;
       const results = [];

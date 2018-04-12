@@ -11,6 +11,7 @@ import {
 import ScrollableTabView, {DefaultTabBar} from 'react-native-scrollable-tab-view';
 import API from "../Config/APIConfig";
 import Rank from './Rank';
+
 import Window from '../Config/Maco';
 
 export default class Find extends Component {

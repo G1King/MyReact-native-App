@@ -74,7 +74,8 @@ const Navigation = StackNavigator({
     },
    detail:{
         screen:Detail
-   }
+   },
+
 },{
     headerMode:'screen'
 });

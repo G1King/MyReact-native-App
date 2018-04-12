@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {View,Text,TouchableOpacity,StyleSheet,Image} from 'react-native';
 import Star from './Star';
+
 export default class Rank extends Component{
     //给属性给予默认值
     static defaultProps = {
